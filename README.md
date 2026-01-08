@@ -33,21 +33,8 @@ The FSM has **3 states**: `IDLE`, `DATA`, and `CHECKSUM`.
 
 ### Step-by-Step Process:
 
-1. **[Reset State Activation](https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/YOUR_FILE.v#L10-L15)**: In the reset state, data lines will be held high.
+- FSM has 3 states idle, data and checksum. First of all reset state will be activated(https://github.com/Aayush-75/Custom-Protocol/blob/main/protocol.v#L54-L57). In reset state data lines will be held high. After lowering the reset system will wait for transition of low data lines which indicates start condition**. Detection of start condition will change state to idle to data**. In data state one after one total 4*4 16 bits of data will be transferred monitored via 2 bit data counter**. With transferring each bits their checksum bit will also be calculated and stored**. After completion of this calculations checksum bits will be transferred to output checksum register**. Data received at output side will again go through process of checksum calculation**. Previously calculated checksum will be compared with new calculation and if they match than valid register will be high to indicate data validity**.
 
-2. **[Start Condition Detection](https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/YOUR_FILE.v#L20-L25)**: After lowering the reset, the system will wait for the transition of low data lines, which indicates the start condition.
-
-3. **[State Transition to DATA](https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/YOUR_FILE.v#L30-L35)**: Detection of the start condition will change the state from `IDLE` to `DATA`.
-
-4. **[Data Transfer](https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/YOUR_FILE.v#L40-L55)**: In the `DATA` state, one after another, a total of **4×4 = 16 bits** of data will be transferred, monitored via a 2-bit data counter.
-
-5. **[Checksum Calculation During Transfer](https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/YOUR_FILE.v#L60-L70)**: With transferring each bit, their checksum bit will also be calculated and stored.
-
-6. **[Checksum Transmission](https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/YOUR_FILE.v#L75-L80)**: After completion of these calculations, checksum bits will be transferred to the output checksum register.
-
-7. **[Output Side Checksum Calculation](https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/YOUR_FILE.v#L85-L95)**: Data received at the output side will again go through the process of checksum calculation.
-
-8. **[Checksum Validation](https://github.com/YOUR_USERNAME/YOUR_REPO/blob/main/YOUR_FILE.v#L100-L110)**: Previously calculated checksum will be compared with the new calculation, and if they match, the valid register will be high to indicate data validity.
 
 ---
 
