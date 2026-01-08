@@ -67,26 +67,7 @@ Data communication and checksum transfer takes **7 clock cycles** to complete tr
 
 ---
 
-## Usage
 
-```verilog
-// Example instantiation
-custom_protocol protocol_inst (
-    .clk(clk),
-    .reset(reset),
-    .data_pin({data_pin_1, data_pin_2, data_pin_3, data_pin_4}),
-    .strobe_pin(strobe_pin),
-    .direction_pin(direction_pin),
-    .data_valid(data_valid),
-    .received_data(received_data)
-);
-```
-
----
-
-## License
-
-[Your License Here]
 
 ---
 
