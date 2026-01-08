@@ -60,4 +60,4 @@ Data communication and checksum transfer takes **7 clock cycles** to complete tr
 
 ## Contributors
 
-[Your Name/Team]
+[Aayush Desai/Vicharak]
