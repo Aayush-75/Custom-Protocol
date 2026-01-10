@@ -6,6 +6,8 @@ module custom_protocol(
 
   input [3:0]master_data_in,
   input [3:0]slave_data_in
+
+  output reg valid = 0;
   );
 
   reg [3:0]master_data_buffer_out[3:0];
@@ -18,7 +20,6 @@ module custom_protocol(
   reg [3:0]slave_data_out_checksum;
   
   reg [2:0]data_counter = 0;
-  reg valid = 0;
   
   localparam [1:0]
   idle = 2'b00,
@@ -54,6 +55,7 @@ module custom_protocol(
       if(rst)
         begin
           ns = idle;
+		  valid = 0;
         end
       
       else
