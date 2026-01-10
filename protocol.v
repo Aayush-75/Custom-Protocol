@@ -9,7 +9,7 @@ module custom_protocol(
 
   output reg valid = 0;
   );
-
+	
   reg [3:0]master_data_buffer_out[3:0];
   reg [3:0]slave_data_buffer_out[3:0];
   
